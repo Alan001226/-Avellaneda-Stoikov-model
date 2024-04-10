@@ -26,3 +26,29 @@ Here a piece of sample data:
 * Bid Size List: the volume (size) of the bid limit order listed corresponding to the bid list
 * Ask Size List: the volume (size) of the ask limit order listed corresponding to the ask list
 
+## Avellaneda & Stoikov model (model.py)
+
+
+
+## Market Maker (mm.py)
+
+### Order book (class Order)
+
+We create an order class to store the order book (both bid and ask) and excute orders (if the price matches)
+
+#### update_order(self, bid, ask, bid_size, ask_size)
+
+When we input a new 5 level bid/ask data, we need to update the order book information -- add / remove bid ask level data to keep 5 lowest ask prices and 5 highest bid prices (and their sizes accordingly).
+
+#### execute(self, market_price)
+
+When we want to execute, we need to input a price and we could update our PnL and inventory. Noted that bid prices and ask prices are different (almost surely), hence we don't need to record the direction of the execution order. Knowing the market price is enough for us to determine which part of the order book would be executed.
+
+### Market Maker (class MarketMaker)
+
+
+
+
+
+
+
