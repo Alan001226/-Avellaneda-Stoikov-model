@@ -11,6 +11,14 @@ def convert_to_numeric(str_list):
 
 class Order:
     def __init__(self, limit_bid_list, limit_ask_list, limit_bid_size, limit_ask_size, inventory,cash):
+        """
+        limit_bid_list: tuple of 5 highest bid prices
+        limit_ask_list: tuple of 5 lowest ask prices
+        limit_bid_size: tuple of 5 highest bid sizes
+        limit_ask_size: tuple of 5 lowest ask sizes
+        inventory: number of asset held
+        cash: amount of cash held
+        """
         self.limit_bid_list = limit_bid_list
         self.limit_ask_list = limit_ask_list
         self.limit_bid_size = limit_bid_size
@@ -19,6 +27,12 @@ class Order:
         self.cash = cash
 
     def update_order(self, bid, ask, bid_size, ask_size):
+        """
+        bid: new bid price
+        ask: new ask price
+        bid_size: new bid size
+        ask_size: new ask size
+        """
         self.limit_bid_list = list(self.limit_bid_list)  # Convert to list
         self.limit_bid_size = list(self.limit_bid_size)  # Convert to list
         self.limit_ask_list = list(self.limit_ask_list)  # Convert to list
@@ -55,7 +69,13 @@ class Order:
         self.limit_ask_list, self.limit_ask_size = zip(*combined_ask)
     
     def execute(self, market_price):
-
+        """
+        market_price: current market price
+        
+        Returns:
+        inventory: updated inventory
+        cash: updated cash
+        """
         self.limit_bid_list = list(self.limit_bid_list)  # Convert to list
         self.limit_bid_size = list(self.limit_bid_size)  # Convert to list
         self.limit_ask_list = list(self.limit_ask_list)  # Convert to list
@@ -94,6 +114,13 @@ class Order:
         
 class MarketMaker:
     def __init__(self,df,q,gamma,initial_cash):
+        """
+        df: dataframe with columns 'Timestamp', 'Bid List', 'Ask List', 'Bid Size List', 'Ask Size List'
+        q: initial inventory
+        gamma: risk aversion parameter
+        initial_cash: initial cash
+        
+        """
         self.df = df
         self.q = q
         self.gamma = gamma
