@@ -9,9 +9,9 @@ import csv
 from datetime import datetime
 import numpy as np
 
-API_KEY = 'faec99ec-a5ba-4ceb-8949-8e3a9460a211'
-SECRET_KEY = '8366A3936B5A9F859B0D9F1705B32860'
-PASSPHRASE = '!DataRecorder123'
+API_KEY = "Your Own Key" # Enter your own API key here
+SECRET_KEY = "Placeholder for secret key"
+PASSPHRASE = 'Placeholder for passphrase'
 
 
 
