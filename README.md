@@ -50,7 +50,7 @@ When we want to execute, we need to input a price and we could update our PnL an
 ### Reference
 
 
-
+Avellaneda, M., & Stoikov, S. (2008). High-frequency trading in a limit order book. Quantitative Finance, 8(3), 217–224. https://doi.org/10.1080/14697680701381228 
 
 
 
